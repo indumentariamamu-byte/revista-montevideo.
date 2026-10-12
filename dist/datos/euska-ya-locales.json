@@ -1,0 +1,16 @@
+{
+  "locales": [],
+  "campos_por_local": [
+    "id",
+    "nombre",
+    "categoria",
+    "descripcion",
+    "imagen",
+    "whatsapp",
+    "horarios",
+    "entrega",
+    "plazo_entrega",
+    "envio_gratis",
+    "ficha_url"
+  ]
+}

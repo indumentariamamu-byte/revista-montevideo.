@@ -1,0 +1,23 @@
+// Replace photo, logo and contact fields here when each business joins.
+const localesSaludBelleza = [
+  {id:'barberias',category:'Barberías',name:'Barbería X',initials:'BX',style:'barber',description:'Cortes, barba y estilo. Un espacio para renovarte dentro del complejo.',photo:'',logo:'',whatsapp:'',instagram:'',facebook:''},
+  {id:'peluquerias',category:'Peluquerías',name:'Tu peluquería en EUSKA',initials:'PE',style:'salon',description:'Cortes, color y cuidado del cabello, cerca de casa.',photo:'',logo:'',whatsapp:'',instagram:'',facebook:''},
+  {id:'unas',category:'Uñas',name:'Tu espacio de uñas',initials:'U',style:'nails',description:'Manicure, esmaltado y cuidado de manos para acompañar tu estilo.',photo:'',logo:'',whatsapp:'',instagram:'',facebook:''},
+  {id:'masajes',category:'Masajes',name:'Tu espacio de masajes',initials:'M',style:'massage',description:'Un momento para relajarte, cuidarte y disfrutar de tu bienestar.',photo:'',logo:'',whatsapp:'',instagram:'',facebook:''},
+  {id:'cuidados-personales',category:'Cuidado personal',name:'Tu espacio de bienestar',initials:'CP',style:'care',description:'Estética y cuidado personal con propuestas dentro del complejo.',photo:'',logo:'',whatsapp:'',instagram:'',facebook:''}
+];
+const list=document.getElementById('locales');
+function action(label,url,style){const el=document.createElement(url?'a':'button');el.className='local-action '+style;el.textContent=label;if(url){el.href=url;el.target='_blank';el.rel='noopener noreferrer';}else{el.type='button';el.disabled=true;el.setAttribute('aria-disabled','true');el.title='Disponible al incorporar los datos del local';}return el;}
+localesSaludBelleza.forEach(local=>{
+ const article=document.createElement('article');article.className='local-card';article.id=local.id;
+ const photo=document.createElement('div');photo.className='local-photo '+local.style;photo.setAttribute('role','img');photo.setAttribute('aria-label',local.photo?'Foto de '+local.name:'Imagen ilustrativa de '+local.category);
+ const image=document.createElement('img');image.className='local-picture';image.src=local.photo||'assets/eusk71-salud-belleza-barberia.webp';image.alt='';image.loading='lazy';photo.append(image);if(local.photo)photo.classList.add('custom-photo');
+ const caption=document.createElement('div');caption.className='photo-caption';const status=document.createElement('small');status.textContent=local.whatsapp?'EUSKA · DENTRO DEL COMPLEJO':'PRÓXIMAMENTE';caption.append(status,document.createTextNode(local.name));photo.append(caption);
+ const info=document.createElement('div');info.className='local-info';const top=document.createElement('div');top.className='local-top';const category=document.createElement('span');category.className='local-category';category.textContent=local.category+' · EUSKA';const logo=document.createElement('div');logo.className='local-logo';
+ if(local.logo){const img=document.createElement('img');img.src=local.logo;img.alt='Logo de '+local.name;logo.append(img);}else{logo.textContent=local.initials;logo.setAttribute('aria-label','Espacio reservado para el logo del local');}
+ top.append(category,logo);const title=document.createElement('h2');title.textContent=local.name;const description=document.createElement('p');description.className='local-description';description.textContent=local.description;
+ const number=local.whatsapp.replace(/\D/g,'');const wa=number?'https://wa.me/'+number:'';const actions=document.createElement('div');actions.className='local-actions';actions.append(action('WhatsApp',wa?wa+'?text='+encodeURIComponent('Hola, vi '+local.name+' en EUSKA Salud y Belleza y quiero hacer una consulta.'):'','whatsapp'),action('Instagram',local.instagram,''),action('Facebook',local.facebook,''),action('Agendar por WhatsApp',wa?wa+'?text='+encodeURIComponent('Hola, vi '+local.name+' en EUSKA Salud y Belleza. Quiero agendar un turno. ¿Qué horarios tienen disponibles?'):'','agenda'));
+ const note=document.createElement('p');note.className='local-note';note.textContent=number?'Consultá disponibilidad y coordiná tu turno directamente con el local.':'Próximamente: logo, WhatsApp, redes y agenda del local. Foto ilustrativa.';
+ const join=document.createElement('a');join.className='local-join';join.href='publica-tu-negocio.html?origen=eusk71-salud-belleza&rubro='+local.id;join.textContent='Sumar mi negocio →';info.append(top,title,description,actions,note,join);article.append(photo,info);list.append(article);
+});
+if(location.hash){const target=document.getElementById(location.hash.slice(1));if(target)requestAnimationFrame(()=>target.scrollIntoView());}

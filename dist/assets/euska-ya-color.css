@@ -1,0 +1,28 @@
+/* Strong blue opening, white controls and a restrained gold glow. */
+body{background:#fff;position:relative;isolation:isolate;--wash-height:850px;--fade-start:430px;--fade-middle:620px}
+body::before{content:"";position:absolute;z-index:-1;pointer-events:none;inset:0 0 auto;height:var(--wash-height);background:radial-gradient(ellipse at 92% 0%,#e0b85830 0%,transparent 52%),radial-gradient(ellipse at 18% 0%,#247fd84d 0%,transparent 60%),linear-gradient(180deg,#062c61 0%,#0b4687 var(--fade-start),#dce9f4 var(--fade-middle),#fff 100%)}
+header{background:transparent;border-bottom:1px solid #ffffff24;color:#fff}
+.logo{background:#fff;border-radius:12px;box-shadow:0 5px 18px #001a3430}
+.nav a{color:#123a64;background:#fff;border-radius:6px;box-shadow:0 0 0 6px #fff,0 5px 16px #001a3420}
+.nav a:hover,.nav a[aria-current]{color:#785d1e;box-shadow:0 0 0 6px #fff,0 0 0 8px #e3bd63}
+.back{color:#fff;text-decoration-color:#e3bd63}
+.intro h1{color:#fff;text-shadow:0 3px 18px #001b3630}
+.intro p,.opening-note{color:#f0f5fb}
+.badge{background:linear-gradient(145deg,#fff,#fffaf0);color:#123a64;box-shadow:0 5px 18px #001a342b,inset 0 -3px 0 #e3bd63}
+.carousel-controls button,.side-control{background:#fff;color:#123a64;border:1px solid #ffffffa8;box-shadow:0 5px 16px #062c6120,inset 0 -3px 0 #e3bd6370}
+.carousel-controls button:hover,.side-control:hover{background:#fff8e8;color:#092e52}
+.category{background:#fff;box-shadow:0 10px 28px -16px #092e5280;border-color:#fff}
+.category:hover{border-color:#dfb75e;box-shadow:0 12px 28px -14px #092e5280}
+.category:focus-visible,.side-control:focus-visible,.carousel-controls button:focus-visible,.nav a:focus-visible{outline:3px solid #e3bd63;outline-offset:4px}
+/* Gold bevel only on the small category cards. */
+.category{border:2px solid transparent;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#fff1b7 0%,#e0b856 24%,#b58a35 48%,#f5d984 74%,#cfaa4e 100%) border-box;box-shadow:0 4px 0 #b58a3538,0 11px 22px -14px #092e5280,inset 0 1px 0 #fff}
+.category:hover{border-color:transparent;box-shadow:0 5px 0 #b58a3550,0 15px 25px -13px #092e5280}
+.category .category-photo{border:0;outline:0;box-shadow:none;background-color:#fff}
+/* Category artwork on clean white, without an inner frame. */
+.category .category-photo[class*="food-"]{border:0;border-radius:16px;background-color:#fff;box-shadow:none}
+.category .category-photo.food-0,.category .category-photo.food-1,.category .category-photo.food-2,.category .category-photo.food-3,.category .category-photo.food-4,.category .category-photo.food-5,.category .category-photo.food-6,.category .category-photo.food-7{background-image:url(euska-ya-comidas-sin-gris.webp)}
+.category .category-photo.food-helados{background-image:url(euska-ya-helados-sin-gris.webp)}
+.category .category-photo.food-empanadas{background-image:url(euska-ya-empanadas-sin-gris.webp)}
+
+/* Natural pizza photograph only in the small category cards. */
+.category .category-photo.food-4{background-image:url(euska-ya-pizza-natural.webp);background-size:contain;background-position:center;background-repeat:no-repeat}

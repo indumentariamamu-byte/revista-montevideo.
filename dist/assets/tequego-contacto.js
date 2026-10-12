@@ -1,0 +1,2 @@
+// TequeGo: WhatsApp móvil o WhatsApp Web en computadora.
+(()=>{const mobile=navigator.userAgentData?.mobile??(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||(/Macintosh/i.test(navigator.userAgent)&&navigator.maxTouchPoints>1));if(!mobile)document.querySelectorAll('a.tequego-whatsapp').forEach(link=>{const current=new URL(link.href);const target=new URL('https://web.whatsapp.com/send');target.searchParams.set('phone',current.pathname.slice(1));target.searchParams.set('text',current.searchParams.get('text'));link.href=target.href})})();

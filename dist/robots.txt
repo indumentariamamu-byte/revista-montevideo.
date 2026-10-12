@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /panel-negocios-demo.html
+Disallow: /datos/
+Sitemap: https://revistamontevideo.pages.dev/sitemap.xml

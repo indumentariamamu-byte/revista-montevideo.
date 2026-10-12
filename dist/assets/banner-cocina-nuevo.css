@@ -1,0 +1,8 @@
+.promo-cocina-art{position:relative;display:block;isolation:isolate;overflow:hidden;aspect-ratio:3/1;min-height:280px;background:#ffca19 url('banner-cocina-fondo-nuevo.webp') center/cover no-repeat;color:#072b63;line-height:1.1}
+.promo-cocina-art .promo-logo{position:absolute;z-index:2;right:2.4%;top:6%;width:clamp(80px,10vw,132px);height:clamp(90px,11vw,148px);object-fit:contain;background:#fff;border-radius:12px;padding:3px;box-shadow:0 8px 24px #5a3e1233}
+.promo-cocina-art .promo-copy{position:absolute;z-index:1;left:4.5%;top:13%;width:47%;display:flex;flex-direction:column;align-items:flex-start;gap:8px;text-align:left}
+.promo-cocina-art .promo-kicker{display:block;padding:9px 15px;background:#fff;border-radius:100px;color:#072b63;font:800 clamp(14px,1.7vw,27px)/1.1 Arial,Helvetica,sans-serif;letter-spacing:.015em}
+.promo-cocina-art .promo-offer{display:block;color:#072b63;font:900 clamp(72px,11vw,180px)/.9 Arial,Helvetica,sans-serif;letter-spacing:-.075em;white-space:nowrap;text-shadow:0 4px 9px #b678161f}
+.promo-cocina-art .promo-mention{display:block;color:#072b63;font:700 clamp(14px,2vw,30px)/1.15 Arial,Helvetica,sans-serif}
+.promo-cocina-art .promo-mention b{font-weight:900}
+@media(max-width:760px){.promo-cocina-art{aspect-ratio:auto;min-height:380px;background-size:auto 230px;background-position:right top}.promo-cocina-art .promo-logo{left:12px;right:auto;top:10px;width:92px;height:104px}.promo-cocina-art .promo-copy{left:15px;right:15px;top:auto;bottom:22px;width:auto;gap:6px}.promo-cocina-art .promo-kicker{font-size:17px;padding:7px 11px}.promo-cocina-art .promo-offer{font-size:clamp(82px,20vw,128px)}.promo-cocina-art .promo-mention{font-size:18px}}
